@@ -17,6 +17,7 @@ class AddRemoveElements(unittest.TestCase):
 
     test_url = 'http://the-internet.herokuapp.com/add_remove_elements/'
 
+    # methods setUp and tearDown must be classmethods and use cls instead of self
     @classmethod
     def setUpClass(cls):
         # point to the webdriver (in this case Chrome) service.
@@ -27,6 +28,7 @@ class AddRemoveElements(unittest.TestCase):
         # load a web site.
         driver.get(cls.test_url)
 
+    # test methods name must start with test_ and they will be passed in alphabetical order
     def test_a_add_remove(self):
         driver = self.driver
         # asking user how many elements are to be added and removed
@@ -68,11 +70,14 @@ class AddRemoveElements(unittest.TestCase):
         else:
             print("There is no elements remaining")
 
+    # tearDown will shut down browser
     @classmethod
     def tearDownClass(cls):
         cls.driver.close()
 
 
+# main method, not needed if tests are to be taken in bulk, but it's here in case
+# this test is wanted to be run alone
 if __name__ == '__main__':
     unittest.main(verbosity=2, testRunner=HTMLTestRunner(
         output='reports', report_name='add_remove_report'
