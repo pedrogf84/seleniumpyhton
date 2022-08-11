@@ -24,7 +24,7 @@ class AddRemoveElements(unittest.TestCase):
             '/Users/pedro/Documents/DEVELOPER/PYTHON/chromedriver'))
         driver = cls.driver
         driver.implicitly_wait(15)
-        # load a web site
+        # load a web site.
         driver.get(cls.test_url)
 
     def test_a_add_remove(self):
