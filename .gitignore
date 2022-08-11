@@ -47,3 +47,4 @@ coverage.xml
 .pytest_cache/
 cover/
 the_internet_exercises/reports/
+the_internet_exercises/reports/reports/
